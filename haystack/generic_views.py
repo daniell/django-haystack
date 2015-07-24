@@ -77,7 +77,7 @@ class SearchMixin(MultipleObjectMixin, FormMixin):
         context = self.get_context_data(**{
             self.form_name: form,
             'query': form.cleaned_data.get(self.search_field),
-            'object_list': self.queryset
+            'object_list': self.get_queryset()
         })
         return self.render_to_response(context)
 
