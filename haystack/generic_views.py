@@ -98,7 +98,7 @@ class FacetedSearchMixin(SearchMixin):
 
     def get_context_data(self, **kwargs):
         context = super(FacetedSearchMixin, self).get_context_data(**kwargs)
-        context.update({'facets': self.results.facet_counts()})
+        context.update({'facets': self.get_queryset().facet_counts()})
         return context
 
 
